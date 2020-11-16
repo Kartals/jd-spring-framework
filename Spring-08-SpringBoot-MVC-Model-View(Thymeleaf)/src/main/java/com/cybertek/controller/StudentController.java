@@ -38,7 +38,7 @@ public class StudentController {
         LocalDate birthday=LocalDate.now().minusYears(42);
         model.addAttribute("birthday",birthday);
 
-        Student student=new Student(1,"Mike","Smith");
+        Student student=new Student(1,"Mike","Smith"); // Student object
         model.addAttribute("student",student);
 
         return "student/welcome"; // path address in templates, genelde böyle gruplandırma yapılır
