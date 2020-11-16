@@ -2,10 +2,7 @@ package com.cybertek.controller;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller //Wherever we see @Controller, 1-Business logic happens here 2-Coming from @Commponent, spring boot creates Bean for me from HomeController class
 public class HomeController {
@@ -34,4 +31,30 @@ public class HomeController {
     public String getMappingEx2(){
         return "home";
     }
+
+    @GetMapping("/home/{name}")
+    public String pathVariableEx(@PathVariable("name") String name){
+        System.out.println("name is : " + name);
+        return "home";
+    }
+
+    @GetMapping("/home/{name}/{email}")
+    public String pathVariableEx2(@PathVariable("name") String name, @PathVariable("email") String email){
+        System.out.println("name is : " + name);
+        System.out.println("email is : " + email);
+        return "home";
+    }
+
+    @GetMapping("/home/course")
+    public String requestParamEx(@RequestParam("course") String course){
+        System.out.println("course is : " + course);
+        return "home";
+    }
+
+    @GetMapping(value="/course")
+    public String requestParamEx2(@RequestParam(value="name", required = false,defaultValue = "Cybertek") String name){
+        System.out.println("name is : " + name);
+        return "home";
+    }
+
 }
