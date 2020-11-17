@@ -18,7 +18,7 @@ public class MentorController {
     @GetMapping("/list")
     public  String showTable(Model model){
 
-        List<Mentor> mentorList=new ArrayList<>();
+        List<Mentor> mentorList=new ArrayList<>(); //Mentor comes from Mentor class under model package
         mentorList.add(new Mentor("Mike","Smith",45, Gender.MALE));
         mentorList.add(new Mentor("Tom","Hanks",65, Gender.MALE));
         mentorList.add(new Mentor("Ammy","Bryan",25, Gender.FEMALE));
