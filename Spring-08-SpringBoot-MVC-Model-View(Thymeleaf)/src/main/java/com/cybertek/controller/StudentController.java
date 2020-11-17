@@ -32,6 +32,8 @@ public class StudentController {
         numbers.add(4);
         numbers.add(5);
         numbers.add(7);
+        numbers.add(200);
+        numbers.add(700);
         model.addAttribute("numbers",numbers);
 
         //print your birthday
@@ -42,5 +44,10 @@ public class StudentController {
         model.addAttribute("student",student);
 
         return "student/welcome"; // path address in templates, genelde böyle gruplandırma yapılır
+    }
+
+    @GetMapping("/register")
+    public String homePage2(){
+        return "student/register";
     }
 }

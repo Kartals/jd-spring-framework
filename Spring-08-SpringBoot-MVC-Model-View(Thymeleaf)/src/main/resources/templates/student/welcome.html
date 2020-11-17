@@ -18,6 +18,21 @@
     <h2 th:text="${student.firstName}"></h2>       <!--student.firstname: use directly field name, bu bir yukardaki getFirstName() ile aynı sonucu vermekte -->
 
 
+    <!--Link-->
+    <a th:href="@{https://cybertekschool.com}">Cybertek</a>
+    <a th:href="@{/student/register}">Register</a> <!-- Navigate to a controller (örneğimizde StudentController classdaki student/register  )-->
+
+    <!--Adding parameters to link-->
+    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+    <a th:href="@{/student/welcome(id=${student.id})}">Link3</a> <!-- in a dynamic way-->
+
+    <!--Iteration-->
+    <ul>
+        <li th:each="number : ${numbers}" th:text="${number}"></li>
+    </ul>
+
+    <!--Fragment-->
+    <div th:replace="fragments/footer :: cybertek"></div>
 
 
 </body>
