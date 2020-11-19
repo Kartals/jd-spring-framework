@@ -7,7 +7,8 @@
 <body>
 
     <div align="center">
-        <form th:object="${mentor}">
+        <form action="/mentor/confirm" method="post" th:object="${mentor}">
+            <!-- action="/mentor/confirm" method="post", html page girdiğimiz valulardan sonra register tıkladığımızda bu request mapping'e gitmesini valueları post etmesini istiyoruz-->
             <!-- ${mentor} bu şu anlama gelmekte: bu formdaki her fiedls, mentor objecte assign edilecek-->
             <!-- Eğer th:object yapıyorsak, oluşturduğumuz this form works only one object (örneğimizde mentor objecti) -->
 
@@ -37,9 +38,7 @@
             <label>Company</label>
             <textarea th:field="*{company}"></textarea><br>
 
-            <button type="submit"> Register</button>
-
-
+            <button type="submit">Register</button>
 
         </form>
     </div>
