@@ -30,6 +30,7 @@ public class MentorController {
     @PostMapping("/confirm")
     public String submitForm(@ModelAttribute("mentor") Mentor mentor){
 
+        //gördüğünüz gibi burada model.addAttribute() kullanmıyoruz
         return "mentor/mentor-confirmation";
     }
 }
