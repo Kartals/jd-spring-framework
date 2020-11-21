@@ -22,12 +22,13 @@
                 <th scope="col">Last Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Address</th>
+                <th scope="col">City</th>
                 <th scope="col">State</th>
                 <th scope="col">Zip Code</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="employee :${employeeList}"">
+            <tr th:each="employee :${employeeList}">
                 <td th:text="${employee.firstName}"></td>
                 <td th:text="${employee.lastName}"></td>
                 <td th:text="${age}"></td>
