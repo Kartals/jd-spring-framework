@@ -52,3 +52,10 @@ where id=2;
 select * from pg_trigger;
 
 drop trigger if exists last_name_change2 ON mentors;
+
+
+
+
+
+
+

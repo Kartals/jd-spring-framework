@@ -13,10 +13,6 @@ call update_department(1);
 
 select * from employees where employee_id=1;
 
-
-
-
-
 --test
 CREATE OR REPLACE  PROCEDURE  transfer(
     sender int,
