@@ -2,6 +2,7 @@ package com.cybertek.bootstrap;
 
 import com.cybertek.entity.Department;
 import com.cybertek.entity.Employee;
+import com.cybertek.entity.Region;
 import com.cybertek.enums.Gender;
 import com.cybertek.repository.DepartmentRepository;
 import com.cybertek.repository.EmployeeRepository;
@@ -24,12 +25,10 @@ public class DataGenerator implements CommandLineRunner {
     //injection with constructor
     public DataGenerator(EmployeeRepository employeeRepository, DepartmentRepository departmentRepository) {
         this.employeeRepository = employeeRepository;
-        this.departmentRepository = departmentRepository;
-    }
+        this.departmentRepository = departmentRepository; }
     */
     @Override
     public void run(String... args) throws Exception {
-
         List<Employee> employeeList=new ArrayList<>();
         List<Department> departmentList=new ArrayList<>();
 
@@ -44,6 +43,18 @@ public class DataGenerator implements CommandLineRunner {
         Department d3 = new Department("Clothing","Home");
         Department d4 = new Department("Phones & Tablets","Electronics");
         Department d5 = new Department("Computers","Electronics");
+
+        Region r1 = new Region("Southwest","United States");
+        Region r2 = new Region("Central","United States");
+        Region r3 = new Region("Northwest","United States");
+        Region r4 = new Region("Quebec'","Canada");
+        Region r5 = new Region("Central","Asia");
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
 
         //setter ile e1'in d1'e assign edilmesi
         e1.setDepartment(d1);
