@@ -20,15 +20,15 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    /*
-    @OneToMany (mappedBy = "person") // bunu yaparak person_address table creat edilmiyor.
-    private List<Address> address;
-     */
 
-    @OneToMany
+    @OneToMany (mappedBy = "person") //droop third table via mappedBy
+    private List<Address> address;
+
+    /* case1
+    @OneToMany (cascade = CascadeType.ALL)
     @JoinColumn (name="person_id")
     private List<Address> address;
-
+     */
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
