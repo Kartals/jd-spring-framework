@@ -18,7 +18,7 @@ public class Person {
 
     /*
     @OneToMany
-    @JoinColumn (name="perso_id")
+    @JoinColumn (name="person_id")
     private List<Address> address;
      */
 
