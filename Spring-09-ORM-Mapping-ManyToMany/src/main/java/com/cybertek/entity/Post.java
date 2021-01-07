@@ -22,7 +22,7 @@ public class Post {
     private String title;
     private String description;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "post_tag_rel",        //name whatever you want to Join table, genelde _rel ile kullanılır
     joinColumns = {@JoinColumn(name = "post_id")}, inverseJoinColumns = {@JoinColumn(name = "tag_id")})
     //post_id post tabledan gelen primary key için, tag_id tag tabledan gelen primary key için,  join table'ımızda, örneğimizde post_tag_rel, columnları isimlendirme
