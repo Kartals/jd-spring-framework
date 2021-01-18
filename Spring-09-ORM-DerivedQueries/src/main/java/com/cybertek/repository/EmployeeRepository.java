@@ -11,7 +11,7 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
 
     //Display all employees with email address
-    List<Employee> findByEmail (String email);
+    List<Employee> findByEmailIsNotNull();
 
     //Display all employees with first name '' and last name '', also show all employees with a email address ''
     List<Employee> findByFirstnameAndLastnameOrEmail (String firstname, String lastname, String email);
