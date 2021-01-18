@@ -1,6 +1,7 @@
 package com.cybertek;
 
 import com.cybertek.entity.Region;
+import com.cybertek.repository.DepartmentRepository;
 import com.cybertek.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,8 @@ public class DerivedqueryApplication {
 
 	@Autowired
 	RegionRepository regionRepository;
+	@Autowired
+	DepartmentRepository departmentRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DerivedqueryApplication.class, args);
@@ -22,16 +25,23 @@ public class DerivedqueryApplication {
 	public void testRegions(){
 
 		System.out.println("---------Regions Start------------");
-
 		System.out.println("findByCountry = " + regionRepository.findByCountry("Canada"));
 		System.out.println("findDistinctByCountry = " + regionRepository.findDistinctByCountry("Canada"));
 		System.out.println("findByCountryContaining = " + regionRepository.findByCountryContaining("United"));
 		System.out.println("findByCountryContainingOrderByCountry = " + regionRepository.findByCountryContainingOrderByCountry("Asia"));
 		System.out.println("findTop2ByCountry() = " + regionRepository.findTop2ByCountry("Canada"));
-
-
 		System.out.println("---------Regions End------------");
 	}
 
+	@PostConstruct
+	public void testDepartments(){
+
+		System.out.println("---------Department Start------------");
+		System.out.println("findByDepartment = " + departmentRepository.findByDepartment("Furniture"));
+		System.out.println("findByDivision= " + departmentRepository.findByDivision("Health"));
+		System.out.println("findByDivisionEndingWith= " + departmentRepository.findByDivisionEndingWith("ics"));
+		System.out.println("findDistinctTop3ByDivisionContaining= " + departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
+		System.out.println("---------Department End------------");
+	}
 
 }
